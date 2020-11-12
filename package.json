@@ -2,9 +2,9 @@
   "name": "desafio-nodejs-mutant",
   "version": "1.0.0",
   "description": "",
-  "main": "api/index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start:dev": "nodemon --watch 'api/' --exec 'ts-node api/index.ts' -e ts",
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "test": "jest",
     "lint": "eslint .",
     "lint:fix": "eslint --fix"

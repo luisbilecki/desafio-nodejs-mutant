@@ -1,7 +1,7 @@
 import nock from 'nock'
 import request from 'supertest'
 
-import app from '../../api/app'
+import app from '../../src/app'
 
 import users from '../fixtures/users'
 
