@@ -9,6 +9,8 @@ import { isTest, isProduction } from './utils/env'
 import LoggerStream from './services/loggerStream'
 import errorHandler from './errors/handler'
 
+import userRouter from './routes/user'
+
 const apiDocument: object = require('./swagger.json')
 
 class App {
@@ -49,6 +51,7 @@ class App {
   }
 
   private routes () {
+    this.server.use('/users', userRouter)
     this.server.use(errorHandler)
   }
 }
