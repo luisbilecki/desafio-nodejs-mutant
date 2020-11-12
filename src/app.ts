@@ -1,5 +1,6 @@
 import express, { Application } from 'express'
 import 'express-async-errors'
+import 'reflect-metadata'
 import helmet from 'helmet'
 import cors from 'cors'
 import morgan from 'morgan'

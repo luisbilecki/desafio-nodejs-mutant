@@ -9,3 +9,13 @@ services:
       - /usr/src/app/node_modules
     ports:
       - '8000:8000'
+    links:
+      - db
+  db:
+    container_name: mutant-db
+    image: mysql:8
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: HRrUdp9f
+
