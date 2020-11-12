@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  api:
+    container_name: mutant-api
+    build: '.'
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '8000:8000'

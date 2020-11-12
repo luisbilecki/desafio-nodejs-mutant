@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Backend Challenge - Mutant",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000",
+      "description": "Local server"
+    }
+  ],
+  "security": [],
+  "tags": [
+    {
+      "name": "Users"
+    }
+  ],
+  "paths": {
+  },
+  "components": {
+    "schemas": {
+      "HttpError": {
+        "type": "object",
+        "required": ["status", "name", "message"],
+        "properties": {
+          "status": {
+            "type": "number",
+            "description": "HTTP Error Code",
+            "example": "404"
+          },
+          "name": {
+            "type": "string",
+            "description": "HTTP Error Name",
+            "example": "Not Found"
+          },
+          "message": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "object" }
+            ],
+            "description": "HTTP Error Content"
+          }
+        }
+      }
+    }
+  }
+}
