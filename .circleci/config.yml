@@ -10,5 +10,16 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: npm install
-      - run: npm run lint && npm test
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run ESLint
+          command: npm lint
+      - run:
+          name: Run test suite
+          command: npm test
+          environment:
+            TYPEORM_HOST: localhost
+            TYPEORM_USERNAME: root
+            TYPEORM_PASSWORD: HRrUdp9f
