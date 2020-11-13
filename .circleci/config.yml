@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12.18.3
+      - image:  circleci/mysql:8
+        environment:
+          MYSQL_ROOT_PASSWORD: HRrUdp9f
+          MYSQL_DATABASE: mutant_test
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run lint && npm test

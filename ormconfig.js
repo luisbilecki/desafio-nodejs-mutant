@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const baseConfig = {
   entities: [
     'src/entity/**/*.ts'
@@ -22,10 +24,10 @@ module.exports = Object.assign(
   {},
   {
     type: 'mysql',
-    host: 'db',
+    host: process.env.TYPEORM_HOST,
     port: 3306,
-    username: 'root',
-    password: 'HRrUdp9f',
+    username: process.env.TYPEORM_USERNAME,
+    password: process.env.TYPEORM_PASSWORD,
     database: `mutant_${databaseSuffix}`,
     synchronize: true,
     logging: !isTest
