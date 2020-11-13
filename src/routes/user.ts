@@ -8,4 +8,9 @@ router.get(
   usersController.findAll
 )
 
+router.post(
+  '/import',
+  usersController.import
+)
+
 export default router

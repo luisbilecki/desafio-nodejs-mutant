@@ -15,6 +15,7 @@ const baseConfig = {
   }
 }
 
+const isTest = process.NODE_ENV === 'test'
 const databaseSuffix = process.env.NODE_ENV
 
 module.exports = Object.assign(
@@ -27,7 +28,7 @@ module.exports = Object.assign(
     password: 'HRrUdp9f',
     database: `mutant_${databaseSuffix}`,
     synchronize: true,
-    logging: true
+    logging: !isTest
   },
   baseConfig
 )

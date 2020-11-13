@@ -1,5 +1,7 @@
 import axios, { AxiosInstance } from 'axios'
 
+import { UserApi } from '../../types/user'
+
 class UserExternalAPI {
   client: AxiosInstance
 
@@ -10,7 +12,7 @@ class UserExternalAPI {
     })
   }
 
-  fetchUsers (): Promise<Object> {
+  fetchUsers (): Promise<UserApi[]> {
     return this
       .client
       .get('/users')

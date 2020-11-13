@@ -49,6 +49,35 @@
           }
         }
       }
+    },
+    "/users/import": {
+      "post": {
+        "tags": ["Users"],
+        "description": "Import users from external API to MySQL database",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Import result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserImport"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -115,6 +144,21 @@
                 "type": "string"
               }
             }
+          }
+        }
+      },
+      "UserImport": {
+        "type": "object",
+        "required": ["success"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": "false"
+          },
+          "error": {
+            "type": "string",
+            "example": "Failed import process. Users API error",
+            "description": "Error message"
           }
         }
       },
