@@ -15,7 +15,7 @@ jobs:
           command: npm install
       - run:
           name: Run ESLint
-          command: npm lint
+          command: npm run lint
       - run:
           name: Run test suite
           command: npm test
